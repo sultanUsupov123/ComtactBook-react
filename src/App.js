@@ -1,25 +1,62 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import AddUser from "./components/AddUser/AddUser";
+import UserList from "./components/UserList/UserList";
+import EditUser from "./components/EditUser/EditUser";
+import "./components/Style.css";
 
-function App() {
+const App = () => {
+  const [users, setUsers] = useState([]);
+  const [modal, setModal] = useState(false);
+  const [editUser, setEditUser] = useState({});
+  const handleUser = (newObj) => {
+    let newUsers = [...users];
+    newUsers.push(newObj);
+    setUsers(newUsers);
+    // console.log(newUsers);
+  };
+  // console.log(editUser);
+  //! delete
+  const handleDelete = (id) => {
+    let newUsers = users.filter((item) => item.id !== id);
+    setUsers(newUsers);
+  };
+  //! edit
+  const handleEdit = (userToEdit) => {
+    setModal(true);
+    setEditUser(userToEdit);
+  };
+  const handleCloseModal = () => {
+    setModal(false);
+  };
+
+  const handleSaveUser = (updatedUser) => {
+    const newUsers = users.map((item) => {
+      if (item.id === updatedUser.id) {
+        return updatedUser;
+      }
+      return item;
+    });
+    setUsers(newUsers);
+    handleCloseModal();
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>CONTACTBOOK</h1>
+      <AddUser handleUser={handleUser} />
+      <UserList
+        users={users}
+        handleDelete={handleDelete}
+        handleEdit={handleEdit}
+      />
+      {modal ? (
+        <EditUser
+          editUser={editUser}
+          handleCloseModal={handleCloseModal}
+          handleSaveUser={handleSaveUser}
+        />
+      ) : null}
     </div>
   );
-}
+};
 
 export default App;

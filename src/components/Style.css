@@ -1,28 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap');
 body{
     margin: 0;
     padding: 0 8px;
     color: black;
     /* background-image: url('./images/pexels-pixabay-531880.jpg'); */
     font-weight: bold;
-    font-family: 'Bruno Ace', cursive;
+    background: url("https://www.technocrazed.com/wp-content/uploads/2015/12/London-wallpaper-23.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 table{
     width: 100%;
-    border: 3px solid black;
     text-align: center;
     border-radius: 5px;
+    color: cornsilk;
 }
 table th,td{
-    border: 3px solid black;
+    border: 3px solid rgb(255, 255, 255);
     padding: 10px 0px;
     border-radius: 3px;
+    background: url("https://c4.wallpaperflare.com/wallpaper/932/891/825/hogwarts-legacy-video-games-dragon-owl-harry-potter-hd-wallpaper-preview.jpg");
 }
 table tr{
     transition: 0.3s;
-}
-table tr:hover{
-    background-color: rgb(186, 186, 186);
 }
 .addUserBlock{
 text-align: center;
@@ -34,7 +33,7 @@ h1{
 .bigModal{
     width: 100vw;
     height: 100vh;
-    background-color: bisque;
+    background-color: rgba(70, 70, 70, 0.529);
     position: fixed;
     top: 0;
     left: 0;
@@ -47,7 +46,7 @@ h1{
 .modal{
     width: 30%;
     text-align: right;
-    background-color: rgb(41, 39, 39);
+    background: url("https://c4.wallpaperflare.com/wallpaper/932/891/825/hogwarts-legacy-video-games-dragon-owl-harry-potter-hd-wallpaper-preview.jpg");
     padding: 20px;
     border-radius: 15px;
 }
@@ -57,8 +56,9 @@ h1{
 }
 .modal button{
     width: 50%;
-    height: 30px;
-
+    height: 2.2em;
+    margin-right: 9em;
+    font-size: 1.4em;
 }
 input{
     border: 1px solid black;
@@ -73,30 +73,18 @@ input{
     height: 42px;
     border: none;
 }
-.addBtn:hover{
-    background-color: green;
-}
 .tableBtnEdit{
     height: 35px;
     border: none;
     width: 70px;
-}
-.tableBtnEdit:hover{
-    background-color:orange;
 }
 .tableBtnDelete{
     height: 35px;
     border: none;
     width: 70px;
 }
-.tableBtnDelete:hover{
-    background-color: red;
-}
 button{
     border-radius: 7px;
     transition: 0.3s;
-}
-button:hover{
-    background-color: black;
-    color: white;
+    background-color: #AAA;
 }
